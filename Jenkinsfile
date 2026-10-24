@@ -14,6 +14,10 @@ pipeline {
         disableConcurrentBuilds()
     }
 
+    trigeers {
+        pollSCM('H/2 * * * *')
+    }
+
     stages {
         stage('Checkout') {
             steps {
