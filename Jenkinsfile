@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+     triggers {
+        pollSCM('H/2 * * * *')
+     }
+
     environment {
         IMAGE_NAME      = 'swastika1702/calculator'
         IMAGE_TAG       = "${env.BUILD_NUMBER}"
@@ -12,10 +16,6 @@ pipeline {
     options {
         timestamps()
         disableConcurrentBuilds()
-    }
-
-    trigeers {
-        pollSCM('H/2 * * * *')
     }
 
     stages {
