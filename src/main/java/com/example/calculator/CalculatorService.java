@@ -19,4 +19,8 @@ public class CalculatorService {
         }
       return a / b;
       }
+    public double power(double base, double exponent){
+      return Math.pow(base, exponent);
+    }
+
 }

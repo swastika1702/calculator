@@ -34,4 +34,9 @@ public class CalculatorServiceTest {
   void divideByZeroThrows() {
     assertThrows(IllegalArgumentException.class, () -> service.divide(1, 0));
   }
+
+  @Test
+  void raisesToPower() {
+    assertEquals(1024.0, service.power(2, 10));
+  }
 }

@@ -39,6 +39,11 @@ public class CalculatorController {
     return Map.of("result", service.divide(a, b));
   }
 
+  @GetMapping("/power")
+  public Map<String, Double> power(@RequestParam double a, @RequestParam double b) {
+    return Map.of("result", service.power(a,b));
+  }
+
   @ExceptionHandler(IllegalArgumentException.class)
   public ResponseEntity<Map<String, String>> handleBadInput(IllegalArgumentException ex) {
     return ResponseEntity.badRequest().body(Map.of("error", ex.getMessage()));
